@@ -6,6 +6,7 @@ import { TbBuildingFactory2 } from "react-icons/tb";
 import { IoFlashOutline } from "react-icons/io5";
 import { VscGraphLine } from "react-icons/vsc";
 import { LuNotepadText } from "react-icons/lu";
+import { FaRegBell } from "react-icons/fa";
 
 const Navbar = () => {
   const navLinks = [
@@ -25,7 +26,11 @@ const Navbar = () => {
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost text-white lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -57,8 +62,8 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="flex items-center gap-1">
-            <img className="w-10" src={logo} alt="logo" />
-            <span className="text-3xl text-white">Firstbench</span>
+            <img className="w-8 md:w-10" src={logo} alt="logo" />
+            <span className="md:text-3xl text-white">Firstbench</span>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -66,7 +71,9 @@ const Navbar = () => {
             {navLinks.map((link, idx) => (
               <li key={idx}>
                 <NavLink
-                  className={"text-mygray text-base flex items-center"}
+                  className={
+                    "text-mygray text-base flex items-center font-semibold"
+                  }
                   to={link.path}
                 >
                   {link.icon}
@@ -76,8 +83,23 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end text-white flex items-center gap-4">
+          <div className="text-lg">
+            <FaRegBell />
+          </div>
+          <ul className="menu menu-horizontal  bg-gray-800 rounded-lg p-1">
+            <h3 className="bg-[#f8c2b3] px-3 py-2 rounded-md">P</h3>
+            <li>
+              <details>
+                <summary>Profile</summary>
+                <ul className="bg-base-100 rounded-t-none p-2 text-black">
+                  <li>
+                    <a>Link 2</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
